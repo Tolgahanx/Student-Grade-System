@@ -1,0 +1,128 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+import javax.swing.JOptionPane;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+
+public class main {
+
+	public static void main(String[] args) throws Exception, FileNotFoundException {
+
+		Scanner scanner = new Scanner(System.in);
+		Scanner s = new Scanner(System.in);
+		Scanner d = new Scanner(System.in);
+		
+		
+		File studentfile = new File("Students.txt");
+		PrintWriter studentinfo = new PrintWriter(studentfile);
+		FileReader file = new FileReader(studentfile);
+		BufferedReader reader = new BufferedReader(file);
+		
+		File tempfile = new File("temp.txt");
+		PrintWriter tempinfo = new PrintWriter(tempfile);
+		FileReader dosya = new FileReader(tempfile);
+		BufferedReader okuyucu = new BufferedReader(dosya);
+		
+		Scanner x = new Scanner(studentfile);
+		
+		
+		
+		
+		System.out.println("Hit '1' to enter a student information.");
+		System.out.println("Hit '2' to see all the student informations. ");
+		System.out.println("Hit '3' to delete some of the students data.");
+		
+		int sayi =scanner.nextInt();
+		
+		
+		
+		
+		
+		switch(sayi) {
+		
+		case 1: 
+			int total;
+			int i=0;
+			System.out.println("How many student information will you enter: ");
+			total = scanner.nextInt();
+			do {
+			System.out.println("Enter Student Name: ");
+			String name = s.nextLine();
+			StudentDB.setname(name);
+			studentinfo.print(name+"\t");
+			
+			System.out.println("Enter Student Surname: ");
+			String surname = s.nextLine();
+			StudentDB.setsurname(surname);
+			studentinfo.print(surname+"\t");
+			
+			System.out.println("Enter Student ID: ");
+			String ID = s.nextLine();
+			StudentDB.setid(ID);
+			studentinfo.print(ID+"\t");
+			
+			System.out.println("Enter Student GPA: ");
+			Double GPA = d.nextDouble();
+			StudentDB.setgpa(GPA);
+			studentinfo.println("\n"+GPA);
+			i++;
+			}
+			while(i<total);
+			
+			studentinfo.close();
+			
+			System.out.println("If you want to do another thing you can hit: ");
+			sayi = scanner.nextInt();
+		case 2:
+			String text = "";
+			String line = reader.readLine();
+			while(line !=null) {
+				text+=line;
+				line = reader.readLine();
+			}
+			System.out.println(text);
+			
+			System.out.println("If you want to do another thing you can hit: ");
+			sayi = scanner.nextInt();
+		case 3:
+			
+			System.out.println("i couldnt do the update and delete parts because");     
+			System.out.println("i couldnt reach the informations that stored");
+			System.out.println("in the text file i search from internet and also");
+			System.out.println(" from my friends but i couldnt appyl those");
+			System.out.println("solutions to my code and i stucked i should improve my");
+			System.out.println("coding skill i know everything but its just theorycle");
+			System.out.println(" not in action first year project wont be like");
+			System.out.println("this i am so sorry teacher i tried my best");
+			
+			
+			
+			
+
+							
+		}
+			
+			
+		
+			
+			
+			
+			
+			
+			
+			
+			
+		
+		
+		
+		
+		}
+
+	
+	}
